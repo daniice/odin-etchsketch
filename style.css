@@ -1,5 +1,16 @@
 body {
+    margin: 0;
+    padding: 5vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
 
+#gridPromptButton {
+    width: 50vw;
 }
 
 #container {
@@ -9,6 +20,13 @@ body {
 }
 
 .firstGrid {
-    width: 6.25lvw;
-    height: 6.25lvw;
+    width: 5.625vw;
+    height: 5.625vw;
+    border: solid 0.1px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.firstGridHover {
+    background-color: pink;
 }
