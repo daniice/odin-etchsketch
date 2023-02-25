@@ -1,14 +1,31 @@
 // create first landing grid
+newGrid(16);
+
+//create a grid with the specified number of squares
+const butt = document.querySelector('#submit');
+butt.addEventListener('click', (event) => {
+    event.preventDefault();
+    let num = document.getElementById('newNumberSquares').value;
+    console.log('hi');
+    const container = document.querySelector('#container');
+    container.innerHTML = '';
+    newGrid(num);
+});
+
+//function to create grid
+function newGrid(num) {
 const container = document.querySelector('#container');
-for (i=1; i<=256; i++) {
+let widthVw = 1/num * 90;
+for (i=1; i<=(num*num); i++) {
     const square = document.createElement('div');
-    square.classList.add('firstGrid');
+    square.setAttribute('style', `width: ${widthVw}vw; height: ${widthVw}vw;`);
+    square.classList.add('grid');
     container.appendChild(square);
 }
 
-const squares = Array.from(document.getElementsByClassName('firstGrid'));
+const squares = Array.from(document.getElementsByClassName('grid'));
 squares.forEach(square => {
-    square.addEventListener('mouseover', square.classList.add('firstGridHover'));
-});
-
-//for (i=0; i<(numberSquares+1); i++)
+    square.addEventListener('mouseover', (event) => {
+        event.target.classList.add('gridHover');
+    })});
+}

@@ -9,8 +9,23 @@ body {
     gap: 32px;
 }
 
-#gridPromptButton {
-    width: 50vw;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+#gridPrompt {
+    border: solid 1px;
+    display: flex;
+    padding: 8px;
+    border-radius: 4px;
+    gap: 10px;
+}
+
+#newNumberSquares {
+    width: 40px;
 }
 
 #container {
@@ -19,14 +34,12 @@ body {
     justify-content: left;
 }
 
-.firstGrid {
-    width: 5.625vw;
-    height: 5.625vw;
+.grid {
     border: solid 0.1px;
     display: flex;
     box-sizing: border-box;
 }
 
-.firstGridHover {
+.gridHover {
     background-color: pink;
 }
