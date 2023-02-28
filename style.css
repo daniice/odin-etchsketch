@@ -39,7 +39,3 @@ form {
     display: flex;
     box-sizing: border-box;
 }
-
-.gridHover {
-    background-color: pink;
-}
