@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 5vw;
+    padding: 8px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,11 +31,10 @@ form {
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: center;
 }
 
 .grid {
     border: solid 0.1px;
-    display: flex;
     box-sizing: border-box;
 }

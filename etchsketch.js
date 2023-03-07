@@ -17,19 +17,22 @@ butt.addEventListener('click', (event) => {
 //function to create grid and hover effect
 function newGrid(num) {
 const container = document.querySelector('#container');
-let widthVw = 1/num * 90;
-for (i=1; i<=(num*num); i++) {
+
+for (i=1; i<=num; i++) {
+    const squareRow = document.createElement('div');
+for (j=1; j<=num; j++) {
     const square = document.createElement('div');
-    square.setAttribute('style', `width: ${widthVw}vw; height: ${widthVw}vw; opacity: 0.2`);
+    square.setAttribute('style', squareSide(num));
     square.classList.add('grid');
-    container.appendChild(square);
+    squareRow.appendChild(square);
+}
+    container.appendChild(squareRow);
 }
 
 const squares = Array.from(document.getElementsByClassName('grid'));
 squares.forEach(square => {
     square.addEventListener('mouseover', (event) => {
         let opa = Number(event.target.style.opacity);
-        console.log(opa);
         let newOpa = opa + 0.2;
         if (opa>0.2 && opa<1) { event.target.style.opacity = `${newOpa}`;
     }   else if (opa===1) { event.target.style.backgroundColor = 'black';
@@ -44,4 +47,19 @@ squares.forEach(square => {
 function color() {
     let colorNum = Math.round((Math.random()*255));
     return colorNum;
+}
+
+//function to find width/height of squares
+function squareSide(num) {
+    let width = (window.innerWidth + 16) / num;
+    console.log('width' + width);
+    let height = window.innerHeight / 1.55 / num;
+    console.log('height' + height);
+    //ideally this would be live responding to user resizing window
+    if (window.innerWidth<=(window.innerHeight/1.55)) {
+        return `width: ${width}px; height: ${width}px; opacity: 0.2;`
+    }
+    else {
+        return `width: ${height}px; height: ${height}px; opacity: 0.2;`
+    }
 }
